@@ -1,4 +1,7 @@
 @import url(../sanitize.css);
+body{
+    background-image: url(../img/welcome.jpg);
+}
 
 div.content{
     font-size: 60px;
