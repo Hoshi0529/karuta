@@ -12,7 +12,7 @@
 </head>
 <body>
    
-<div class="battle-container">/
+<div class="battle-container">
 
     <div class="yomiagesan" id="yomiage"><p>井の中の蛙大海を知らず<p></div>
 
@@ -43,12 +43,12 @@ const ary = ['犬も歩けば棒に当たる',
 let cards=[];
 let cardsn=[];
 let num;//aaa
-for(let i =0;i<11;i++)
+for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 {
     num=Math.floor(Math.random()*47);
     for(let j=0;j<=i;j++)
     {
-        if(num===cardsn[j])
+        if(num===cardsn[j])//同じやつがあったらリセット
         {
             num=Math.floor(Math.random()*47);
             j=0;
@@ -96,30 +96,29 @@ for(let i =0;i<11;i++)
         
         
     }
-    document.getElementById('cards').textContent=ary[yomiagen];
+    //document.getElementById('cards').textContent=ary[yomiagen];
 }
 
 
-while(true)
-{
-    const doyomiage = () =>
-            {
-
+//while(true)
+//{
+    //const doyomiage = () =>
+           // {
                 let yomiagen = Math.floor(Math.random()*47);
                 
                 document.getElementById('yomiage').textContent=ary[yomiagen];
-            }   
-            document.getElementById('cards1').addEventListener('click',doyomiage)
+            //}   
+            //document.getElementById('cards1').addEventListener('click',doyomiage)
 
     const cardcheck1 = () =>
     {
-        if(document.getElementById('cards1')===document.getElementById('yomiage').textContent)//正解
+        if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
         {
-
+            document.getElementById('cards1').textContent='正解';
         }
         else//おてつき
         {
-
+            document.getElementById('cards1').textContent='おてつき';
         }
 
         
@@ -127,61 +126,131 @@ while(true)
     }
     const cardcheck2 = () =>
     {
-
+        if(document.getElementById('cards2').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards2').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards2').textContent='おてつき';
+        }
         
 
     }
     const cardcheck3 = () =>
     {
-
+        if(document.getElementById('cards3').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards3').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards3').textContent='おてつき';
+        }
         
 
     }
     const cardcheck4 = () =>
     {
-
+        if(document.getElementById('cards4').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards4').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards4').textContent='おてつき';
+        }
         
 
     }
     const cardcheck5 = () =>
     {
-
+        if(document.getElementById('cards5').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards5').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards5').textContent='おてつき';
+        }
         
 
     }
     const cardcheck6 = () =>
     {
-
+        if(document.getElementById('cards6').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards6').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards6').textContent='おてつき';
+        }
         
 
     }
     const cardcheck7 = () =>
     {
-
+        if(document.getElementById('cards7').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards7').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards7').textContent='おてつき';
+        }
         
 
     }
     const cardcheck8 = () =>
     {
-
+        if(document.getElementById('cards8').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards8').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards8').textContent='おてつき';
+        }
         
 
     }
     const cardcheck9 = () =>
     {
-
+        if(document.getElementById('cards9').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards9').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards9').textContent='おてつき';
+        }
         
 
     }
     const cardcheck10 = () =>
     {
-
+        if(document.getElementById('cards10').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards10').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards10').textContent='おてつき';
+        }
         
 
     }
     const cardcheck11 = () =>
     {
-
+        if(document.getElementById('cards11').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            document.getElementById('cards11').textContent='正解';
+        }
+        else//おてつき
+        {
+            document.getElementById('cards11').textContent='おてつき';
+        }
         
 
     }
@@ -200,7 +269,7 @@ while(true)
 
 
 
-}
+//}
 
 
 const docard = () =>                                               //ランダムにカードのあれ //animation-play-state:paused
