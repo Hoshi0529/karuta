@@ -1,6 +1,7 @@
 @import url(../sanitize.css);
 
 body {
+
     background-image: url(../image/signup.jpg);
     display: flex;
     justify-content: center;

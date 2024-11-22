@@ -1,0 +1,9 @@
+diff a/Code/css/signup.css b/Code/css/signup.css	(rejected hunks)
+@@ -1,7 +1,6 @@
+ @import url(../sanitize.css);
+ 
+ body {
+-    
+     background-image: url(./../css/signup.jpg);
+     display: flex;
+     justify-content: center;
