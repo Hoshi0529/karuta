@@ -3,6 +3,7 @@
 body {
 
     background-image: url(../img/signup.jpg);
+    background-size:100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,13 +11,14 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    color:#484848;
 }
 
 .signup-container {
     width: 250px;
     padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    border: 10px solid #7bba85;
+    background-color: #efeccc;
     text-align: center;
 }
 
@@ -36,6 +38,7 @@ body {
 label {
     font-size: 14px;
     margin-bottom: 5px;
+    color: #7a7a7a;
 }
 
 input[type="name"], input[type="email"] , input[type="password"], input[type="birthdate"]{
@@ -50,10 +53,14 @@ input[type="name"], input[type="email"] , input[type="password"], input[type="bi
     padding: 10px;
     width: 100%;
     border: none;
-    background-color: #e0e0e0;
+    background-color: #d0dbb2;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid #bac491;
+    border-radius: 5px;
+    color:#484848;
 }
 
 .signup-button:hover {
