@@ -19,6 +19,14 @@
     animation: scroll-text 10s ;
     
   }
+
+  .seitousan{
+    font-size: 20px;
+    text-align: center;
+    margin: 0px;
+    height: 0px;
+  }
+  
   
   @keyframes scroll-text {
     0% {
