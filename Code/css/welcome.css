@@ -1,16 +1,17 @@
 @import url(../sanitize.css);
 body{
     background-image: url(../img/welcome.jpg);
+    background-size:100%;
 }
 
 div.content{
     font-size: 60px;
-    margin: 150px auto;
+    margin: 380px auto auto auto;
     text-align: center;
 }
 button{
     font-size: 90%;
     width:15%;
-    padding: 30px;
+    padding: 10px;
     text-align: center;
 }
