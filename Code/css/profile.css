@@ -1,0 +1,21 @@
+@charset "UTF-8";
+body{
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    margin: 10px;
+    font-size: 40px;
+    padding: 125px 0px 0px 50px;
+    text-align: left;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 5px;
+    font-size: 100px;
+    padding: 200px 75px 0px 15px;
+    text-align: center;
+    cursor: pointer;
+}
