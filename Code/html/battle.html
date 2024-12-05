@@ -115,6 +115,21 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
             //}   
             //document.getElementById('cards1').addEventListener('click',doyomiage)
 
+//ここからしばらく正誤判定
+
+    document.getElementById('cards1').addEventListener('click',cardcheck1)
+    document.getElementById('cards2').addEventListener('click',cardcheck2)
+    document.getElementById('cards3').addEventListener('click',cardcheck3)
+    document.getElementById('cards4').addEventListener('click',cardcheck4)
+    document.getElementById('cards5').addEventListener('click',cardcheck5)
+    document.getElementById('cards6').addEventListener('click',cardcheck6)
+    document.getElementById('cards7').addEventListener('click',cardcheck7)
+    document.getElementById('cards8').addEventListener('click',cardcheck8)
+    document.getElementById('cards9').addEventListener('click',cardcheck9)
+    document.getElementById('cards10').addEventListener('click',cardcheck10)
+    document.getElementById('cards11').addEventListener('click',cardcheck11)
+
+
     const cardcheck1 = () =>
     {
         if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
@@ -259,25 +274,12 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
         
 
     }
-
-        document.getElementById('cards1').addEventListener('click',cardcheck1)
-        document.getElementById('cards2').addEventListener('click',cardcheck2)
-        document.getElementById('cards3').addEventListener('click',cardcheck3)
-        document.getElementById('cards4').addEventListener('click',cardcheck4)
-        document.getElementById('cards5').addEventListener('click',cardcheck5)
-        document.getElementById('cards6').addEventListener('click',cardcheck6)
-        document.getElementById('cards7').addEventListener('click',cardcheck7)
-        document.getElementById('cards8').addEventListener('click',cardcheck8)
-        document.getElementById('cards9').addEventListener('click',cardcheck9)
-        document.getElementById('cards10').addEventListener('click',cardcheck10)
-        document.getElementById('cards11').addEventListener('click',cardcheck11)
-
-
-
+//正誤判定終わり
+      
 //}
 
 
-const docard = () =>                                               //ランダムにカードのあれ //animation-play-state:paused
+/*const docard = () =>             //ランダムにカードのあれ //animation-play-state:pausedここいらないかも
             { 
                 let card = Math.floor(Math.random()*3)+1;
 
@@ -294,7 +296,7 @@ const docard = () =>                                               //ランダ�
                 {
                     document.getElementById('cards1').textContent='岡山に真珠';
                 }
-            }
+            }*/
 
 
 </script>
