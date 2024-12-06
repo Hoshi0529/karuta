@@ -1,6 +1,8 @@
 @import url(../sanitize.css);
 
 body {
+    background-image: url(../img/singup.jpg);
+    background-size:100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +15,8 @@ body {
 .signup-container {
     width: 250px;
     padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
+    border: 10px solid #64886e;
+    background-color: #efeccc;
     text-align: center;
 }
 
@@ -38,7 +40,7 @@ label {
 
 input[type="name"], input[type="email"] , input[type="password"], input[type="birthdate"]{
     width: 100%;
-    padding: 8px;
+    padding: 8px 0px 8px 0px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
