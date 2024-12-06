@@ -1,5 +1,7 @@
 @charset "UTF-8";
 body{
+    background-image: url(../img/result.jpg);
+    background-size:100%;
     width: auto;
     height: auto;
     text-align: center;
