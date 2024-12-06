@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body{
-    text-align: center;
+
     font-size: 40px;
 }
 
@@ -14,8 +14,16 @@ p {
 
 h1 {
     margin: 5px;
-    font-size: 100px;
-    padding: 200px 75px 0px 15px;
+    font-size: 55px;
+    padding: 10px 60px 0px 7px;
     text-align: center;
     cursor: pointer;
+}
+option {
+    font-size: 10px;
+
+}
+label {
+    font-size: 20px;
+    text-align:left; 
 }
