@@ -16,8 +16,11 @@
 
 
     
-    <div class="yomiagesan" id="yomiage"><p>井の中の蛙大海を知らず<p></div><!--読み上げのところ-->
+    <div class="yomiagesan" ><!--読み上げのところ-->
+        <p class="yomiagenagare"id="yomiage">井の中の蛙大海を知らず</p>
+    </div>
 
+    
         
     <div class="seitousan" id="seitou"><p>ささささ<p></div><!--正答-->
 
@@ -71,7 +74,6 @@ const ary = ['犬も歩けば棒に当たる',
            // {
             let yomiagen = Math.floor(Math.random()*47);
                 
-                document.getElementById('yomiage').textContent=ary[yomiagen];
                 document.getElementById('yomiage').textContent=ary[yomiagen];
             //}   
             //document.getElementById('cards1').addEventListener('click',doyomiage)
