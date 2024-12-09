@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>無題ドキュメント</title>
-<link  href="./../css/map.css" rel="stylesheet" type="text/css">
+<link href="../css/map.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
 </head>
 
@@ -17,7 +17,7 @@
 <p class="area-title">北海道・東北</p>
 <div class="area">
 <a href="#">
-    <div id="hokkaido" href="./battle.html">
+    <div id="hokkaido" href="./mode.html">
         <p>北海道</p>
         </div>
 </a>
@@ -290,4 +290,39 @@
 </div> <!-- japan-map -->
 
 </body>
+
+<script>
+  const kenname = 'kkk';  // イベントで使用する名前
+
+// クリックしたときに実行される関数
+function kenkenpa(e) {
+    /*e.target.textContent = this.name;  // クリックした要素のテキストを 'kkk' に変更
+    location.href = './battle.html';  // battle.html に遷移
+*/
+    const url = `./battle.html?name=${encodeURIComponent(kenname)}`;
+            location.href = url;  // battle.html に遷移
+}
+
+// 名前の情報を含むオブジェクト
+const handler = {
+    name: kenname,
+    handleEvent: kenkenpa  // イベントハンドラー関数
+};
+
+// ページ上の全ての要素にイベントリスナーを追加
+const allElements = document.querySelectorAll('p');  // 全ての要素を取得
+
+allElements.forEach(element => {
+    element.addEventListener('click', handler.handleEvent.bind(handler));  // クリック時にイベントハンドラーを実行
+});
+    /*const kenname ='kkk';
+    const target =document.getElementById('okinawa');//どこ押したら反応するか
+    function kenkenpa(e) {
+        document.getElementById('okinawa').textContent=this.name;//変える場所
+        //location.href='./battle.html';
+        
+    }
+ 
+ target.addEventListener('click',{name:kenname, handleEvent:kenkenpa});//押したらこいつが実行されるよ*/
+</script>
 </html>
