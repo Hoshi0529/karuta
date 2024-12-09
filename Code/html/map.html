@@ -292,13 +292,15 @@
 </body>
 
 <script>
-  const kenname = 'kkk';  // イベントで使用する名前
+
+  let kenname; // イベントで使用する名前
 
 // クリックしたときに実行される関数
 function kenkenpa(e) {
     /*e.target.textContent = this.name;  // クリックした要素のテキストを 'kkk' に変更
     location.href = './battle.html';  // battle.html に遷移
 */
+kenname=e.target.textContent;
     const url = `./battle.html?name=${encodeURIComponent(kenname)}`;
             location.href = url;  // battle.html に遷移
 }
