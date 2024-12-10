@@ -1,23 +1,17 @@
 @charset "UTF-8";
 body{
     background-image: url(../img/result.jpg);
-    width: auto;
-background-size: 100%;
-    text-align: center;
-    font-size: 50px;
-    padding: 0px;
-    
+    background-size: 100%;
 }
-.h1 {
-    margin: 0px;
-    padding: 0px 0px -200px 0px;
+.restext{
+    margin-top: 0px;
     text-align: center;
-    font-size: 50px;
-    
-    
+    font-size: 110px;
 }
 .result{
     display: flex;
+    margin-top: 110px;
+    margin-left: 450px;
     padding: 0px 0px 0px 0px;
 }
 .score {
@@ -35,7 +29,8 @@ background-size: 100%;
     margin: 0px 0px  30px 10px;
     font-size: 20px;
     padding: 10px 30px;
-    
+    margin-top: 50px;
+    margin-left: 600px;
     text-align: center;
     cursor: pointer;
 }
