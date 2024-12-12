@@ -3,10 +3,21 @@ body{
     background-image: url(../img/welcomenull.jpg);
     background-size:100%;
 }
-
+.tatle{
+font-size: 120px;
+color:honeydew;
+-webkit-text-stroke: 6px #148f37;
+font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
+margin: 10px auto auto auto;
+}
+br {
+    display: block;
+    content: "";
+    margin: -40px 0;
+    }
 div.content{
     font-size: 60px;
-    margin: 380px auto auto auto;
+    margin: 20px auto auto auto;
     text-align: center;
 }
 button{
