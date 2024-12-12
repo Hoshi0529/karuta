@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@import url(../css/sanitize.css); 
 body{
     background-image: url(../img/result.jpg);
     background-size: 100%;
@@ -6,30 +6,30 @@ body{
 .restext{
     margin-top: 0px;
     text-align: center;
-    font-size: 110px;
+    font-size: 100px;
 }
 .result{
     display: flex;
-    margin-top: 110px;
-    margin-left: 450px;
+    margin-top: 10px;
+    margin-left: 250px;
     padding: 0px 0px 0px 0px;
+
 }
 .score {
     text-align: left;
     font-size: 30px;
-    padding: 0px 150px 0px 350px;
-
+    padding: 0px 150px 0px 450px;
 }
 .number{
     text-align: right;
     font-size: 30px;
-    padding: 0px 0px 0px 200px;
+    padding: 0px 0px 0px 25px;
 }
 .top{
     margin: 0px 0px  30px 10px;
     font-size: 20px;
     padding: 10px 30px;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 600px;
     text-align: center;
     cursor: pointer;
