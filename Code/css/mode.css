@@ -1,5 +1,7 @@
 @charset "UTF-8";
 body{
+    background-image: url(../img/mode.jpg);
+    background-size:100%;
     text-align: center;
     font-size: 40px;
 }
@@ -7,6 +9,7 @@ body{
 .online{
     margin: 20px;
     font-size: 40px;
+    margin-right: 650px;
     padding: 50px 20px;
     text-align: center;
     cursor: pointer;

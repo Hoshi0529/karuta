@@ -4,11 +4,12 @@ body{
     background-size:100%;
 }
 .tatle{
-font-size: 120px;
+font-size: 150px;
 color:honeydew;
 -webkit-text-stroke: 6px #148f37;
 font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
 margin: 10px auto auto auto;
+transform: rotate(-10deg);
 }
 br {
     display: block;
