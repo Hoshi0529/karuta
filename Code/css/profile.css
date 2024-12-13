@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body{
-
+    background-image: url(../img/prfile.jpg);
+    background-size:100%;
     font-size: 40px;
 }
 
