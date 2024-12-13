@@ -7,7 +7,7 @@ body{
 }
 
 .atama button{
-    margin:20px 0px 0px 355px;
+    margin:55px 0px 0px 355px;
     font-size: 20px;
     padding: 0px 5px;
     text-align: left;
@@ -15,7 +15,7 @@ body{
 }
 
 h1 {
-    margin: 5px;
+    margin: 0px 5px 20px 5px;
     font-size: 55px;
     text-align: center;
     cursor: pointer;
@@ -24,7 +24,7 @@ h1 {
         
     -2px 2px 0 #000, /* 左下 */ 
             2px -2px 0 #000, /* 右上 */ 
-               -2px -2px 0 #000; /* 左上 */
+            -2px -2px 0 #000; /* 左上 */
 
 }
 .signup-container{
@@ -33,7 +33,7 @@ h1 {
 }
 
 label {
-    font-size: 20px;
+    font-size: 30px;
     text-align:left; 
     color: #777777;
 
@@ -45,7 +45,7 @@ label {
 }
 
 .form-group3 input{
-    margin: 0px 0px 0px 88px;
+    margin: 0px 100px 0px 100px;
 
 }
 .form-group4 select{
