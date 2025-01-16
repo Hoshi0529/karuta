@@ -13,8 +13,7 @@
 <body>
     
 <div class="battle-container">
-    <h1>名前が渡されました:</h1>
-    <p id="nameDisplay"></p> <!-- ここに名前を表示 -->
+    <h1 id="nameDisplay"></h1><!-- ここに名前を表示 -->
 
     
     <div class="yomiagesan" ><!--読み上げのところ-->
@@ -23,7 +22,7 @@
 
     
         
-    <div class="seitousan" id="seitou"><p>ささささ<p></div><!--正答-->
+    <div class="seitousan" id="seitou"><p><p></div><!--正答-->
 
         
     <div class="cardsup"><!--絵札1~6枚目-->
@@ -56,7 +55,7 @@ const urlParams = new URLSearchParams(window.location.search);
         document.getElementById('nameDisplay').textContent = nameValue;  // 取得した値を表示
 
 
-   /* <div class="cardsup"><!--絵札1~6枚目
+    /* <div class="cardsup"><!--絵札1~6枚目
         <button class="ca1" id="cards1"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
         <button class="ca2"id="cards2"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
         <button class="ca3"id="cards3"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
