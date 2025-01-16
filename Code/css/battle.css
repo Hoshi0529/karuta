@@ -20,6 +20,7 @@ body{
     white-space: nowrap;
     animation: scroll-text 20s linear infinite;
     padding-left:100%;
+    
   }
 
   @keyframes scroll-text {
@@ -37,11 +38,6 @@ body{
     text-align: center;
   }
   
-  
-  
-
-
-
 
 .ca1{
     margin-top: 80px;
