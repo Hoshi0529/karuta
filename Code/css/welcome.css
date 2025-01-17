@@ -23,6 +23,9 @@ div.content{
 }
 button{
     font-size: 90%;
+    color:#4a9760;
+    border: 10px solid #62a776;
+    background-color: #f8f6e4;
     width:15%;
     padding: 10px;
     text-align: center;

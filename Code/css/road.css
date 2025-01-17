@@ -8,6 +8,7 @@ body{
 h1 {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: white;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
     color: #4b4343;
     margin: 5px;
     font-size: 100px;
