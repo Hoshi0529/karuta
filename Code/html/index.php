@@ -5,7 +5,7 @@
     <body>
 <?php
 //データベースのインスタンス名を指定
-$serverName = ".\\karutaserveraaa";
+$serverName = ".\\karutaserveraaa.database.windows.net";
 //接続情報を指定
 $connectionInfo = array("UID"=>"sa",
                 "PWD"=>"114514!yaju&u",
