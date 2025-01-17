@@ -4,9 +4,15 @@ body{
     background-size:100%;
     text-align: center;
     font-size: 40px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffffcc;
 }
 
 .online{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    color: #f47777;
+    background-color: #f56e6e;
     margin: 20px;
     font-size: 40px;
     margin-right: 650px;
@@ -15,6 +21,10 @@ body{
     cursor: pointer;
 }
 .solo{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    color: #a3c0ff;
+    background-color: #7d9fe9;
     margin: 20px;
     font-size: 40px;
     padding: 50px 70px;
