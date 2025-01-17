@@ -11,7 +11,7 @@ $connectionInfo = array("UID"=>"sa",
                 "PWD"=>"114514!yaju&u",
                 "Database"=>"karutabase2",
                 "CharacterSet"=>"UTF-8");
-//コネクションを確立
+//コネクションを確立しる！
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 //クエリー文を指定
 $tsql = "SELECT * from todouhuken";
