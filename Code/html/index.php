@@ -5,16 +5,16 @@
     <body>
 <?php
 //データベースのインスタンス名を指定
-$serverName = ".\\SQLEXPRESS";
+$serverName = ".\\karutaserveraaa";
 //接続情報を指定
 $connectionInfo = array("UID"=>"sa",
-                "PWD"=>"password",
-                "Database"=>"MyDB",
+                "PWD"=>"114514!yaju&u",
+                "Database"=>"karutabase2",
                 "CharacterSet"=>"UTF-8");
 //コネクションを確立
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 //クエリー文を指定
-$tsql = "SELECT * from staffs";
+$tsql = "SELECT * from todouhuken";
 //クエリーを実行
 $result = sqlsrv_query($conn, $tsql);
 ?>
