@@ -13,7 +13,19 @@ body {
 	color: #000000;
 	background-color: #84c1ff;
 }
+.mode{
+	width: 70px;
+	height:50px;
+	background-color:#ef9f27;
+	border: 5px solid #c89a1b;
+		border-radius: 100vh;
+	  
 
+}
+.botan{
+	margin-left:160px;
+	margin-top:40px;
+}
 img {
 	vertical-align: bottom;
 } 
