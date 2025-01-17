@@ -4,18 +4,14 @@ body{
     background-size:100%;
    } 
 
-p {
-    margin: 10px;
-    font-size: 40px;
-   padding: 125px 0px 0px 50px;
-   text-align: left;
-   cursor: pointer;
-}
 
 h1 {
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    color: #4b4343;
     margin: 5px;
     font-size: 100px;
-    padding: 200px 75px 0px 15px;
+    padding: 90px 75px 0px 15px;
     text-align: center;
     cursor: pointer;
 }
