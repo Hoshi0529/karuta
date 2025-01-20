@@ -16,6 +16,13 @@
 
 
     <script>
+        // URLからクエリパラメータを取得
+const urlParams = new URLSearchParams(window.location.search);
+        const nameValue = urlParams.get('name');  // 'name'というパラメータの値を取得
+
+        // 取得した値を表示
+        document.getElementById('nameDisplay').textContent = nameValue;  // 取得した値を表示
+
 //<-- http-equiv="refresh" content=" 5; url=./onlinebattle.html"-->
 
 
