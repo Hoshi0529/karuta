@@ -6,7 +6,7 @@ body{
   
   .yomiagesan
   {
-    font-size: 100px;
+
     text-align: center;
     margin: 0px;
     height: 250px;
@@ -14,6 +14,8 @@ body{
   }
   
     .yomiagenagare{
+      margin: 0;
+      font-size: 80px;
       display: inline-block;
       white-space: nowrap;
       animation: scroll-text 20s linear infinite;
@@ -22,7 +24,7 @@ body{
   
     @keyframes scroll-text {
       0% {
-        transform: translateX(-10%);
+        transform: translateX(-0%);
       }
       100% {
         transform: translateX(-50%);
