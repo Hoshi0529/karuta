@@ -24,7 +24,12 @@
         
     <div class="seitousan" id="seitou"><p><p></div><!--正答-->
 
-        
+<div class="score">
+    <div class="scoresanp" id="scorep">2</div><!--プレイヤー点数-->
+    <div class="scoresanc" id="scorec" >2</div><!--CPU点数-->
+</div>
+    
+
     <div class="cardsup"><!--絵札1~6枚目-->
         <button class="ca1" id="cards1"></button>
         <button class="ca2"id="cards2"></button>
@@ -147,6 +152,7 @@ do//残り絵札が0枚になるまでループ
    
     const doyomiage = () =>//読み札抽選関数
     {
+        //document.getElementById('scorep').textContent=3;プレイヤー点数
         let yomiagen = Math.floor(Math.random()*13);
 
         if(yomiagen==13)//から札よむかも
@@ -162,7 +168,7 @@ do//残り絵札が0枚になるまでループ
 
     }
             //document.getElementById('cards1').addEventListener('click',doyomiage)
-        restcards=11;
+        
     if(restcards==11)
     {
         doyomiage();

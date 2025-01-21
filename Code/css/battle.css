@@ -1,7 +1,7 @@
 
 
 body{
-  background-image: url(../img/sorobattleemaki.jpg);
+  background-image: url(../img/yamanoiyasusi.jpg);
   background-size:100%;
 }
 
@@ -10,10 +10,9 @@ body{
 {
   text-align: center;
   margin: 0px;
-  height: 250px;
+  
   overflow: hidden;
 }
-
 
   .yomiagenagare{
     margin: 0;
@@ -39,7 +38,19 @@ body{
     font-size: 20px;
     text-align: center;
   }
-  
+  .score{
+    margin-top: 75px;
+    margin-left: 1400px;
+    margin-right: 0;
+  }
+  .scoresanp{
+    font-size: 60px;
+    margin: 0;
+  }
+.scoresanc{
+  font-size: 60px;
+  margin: 0;
+}
 
 .ca1{
     margin-top: 80px;
