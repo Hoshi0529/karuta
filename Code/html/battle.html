@@ -25,8 +25,8 @@
     <div class="seitousan" id="seitou"><p><p></div><!--正答-->
 
 <div class="score">
-    <div class="scoresanp" id="scorep">2</div><!--プレイヤー点数-->
-    <div class="scoresanc" id="scorec" >2</div><!--CPU点数-->
+    <div class="scoresanp" id="scorep">*</div><!--プレイヤー点数-->
+    <div class="scoresanc" id="scorec" >*</div><!--CPU点数-->
 </div>
     
 
@@ -89,6 +89,8 @@ const ary = ['犬も歩けば棒に当たる',
 let cards=[];//使ってない
 let cardsn=[];//選ばれた絵札入れとく配列
 let num;//aaa
+let playerscore=0;
+let cpuscore =0;
 for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 {
     num=Math.floor(Math.random()*47);
@@ -178,32 +180,28 @@ do//残り絵札が0枚になるまでループ
 
 
 //ここからしばらく正誤判定////////////////////////////////////////////////////////////////////////////////////////////////
-
+    //var yamanoi =Boolean(' ');
     const cardcheck1 = () =>
     {
         if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
-
-        
 
     }
     const cardcheck2 = () =>
     {
         if(document.getElementById('cards2').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -212,12 +210,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards3').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -226,13 +223,13 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards4').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
-        }
+            incorrect();
+        }document.getElementById('seitou').textContent='おてつき';
+        
         
 
     }
@@ -240,12 +237,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards5').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -254,12 +250,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards6').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -268,12 +263,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards7').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -282,12 +276,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards8').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -296,12 +289,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards9').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -310,12 +302,11 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards10').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
@@ -324,16 +315,34 @@ do//残り絵札が0枚になるまでループ
     {
         if(document.getElementById('cards11').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            document.getElementById('seitou').textContent='正解';
-            restcards-=1;doyomiage();
+            correct();
         }
         else//おてつき
         {
-            document.getElementById('seitou').textContent='おてつき';
+            incorrect();
         }
         
 
     }
+
+    const correct = () =>{
+
+        //document.getElementById('seitou').textContent='正解';
+        playerscore+=1;
+        document.getElementById('scorep').textContent=playerscore;
+        restcards-=1;
+        doyomiage();
+    }
+    const incorrect = () =>{
+
+        cpuscore+=1;
+        document.getElementById('scorec').textContent=cpuscore;
+        restcards-=1;
+        doyomiage();
+    }
+    
+
+
     document.getElementById('cards1').addEventListener('click',cardcheck1)
     document.getElementById('cards2').addEventListener('click',cardcheck2)
     document.getElementById('cards3').addEventListener('click',cardcheck3)
