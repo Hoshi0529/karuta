@@ -88,7 +88,7 @@ const ary = ['犬も歩けば棒に当たる',
 
 let cards=[];//使ってない
 let cardsn=[];//選ばれた絵札入れとく配列
-let num;//aaa
+let num;
 let playerscore=0;
 let cpuscore =0;
 for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
@@ -104,7 +104,7 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
     }
     //cards[i]=ary[num];
     cardsn[i]=num;
-    switch(i)
+    switch(i)//絵札並べる
     {
         case 0:
         document.getElementById('cards1').textContent=ary[num];
@@ -149,25 +149,25 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 
 //😆😆😆😆😆😆😆😆😆😆😆読み札のとこここだよ😆😆😆😆😆😆😆😆😆😆😆😆😆😆
 let restcards=11;//残り枚数
-do//残り絵札が0枚になるまでループ
-{
+//残り絵札が0枚になるまでループ
+while(restcards>0){
    
     const doyomiage = () =>//読み札抽選関数
     {
-        //document.getElementById('scorep').textContent=3;プレイヤー点数
-        let yomiagen = Math.floor(Math.random()*13);
-
-        if(yomiagen==13)//から札よむかも
+        if(restcards>0)
         {
-            yomiagen = Math.floor(Math.random()*47);
-                
-            document.getElementById('yomiage').textContent=ary[yomiagen];
+            //document.getElementById('scorep').textContent=3;プレイヤー点数
+            let yomiagen = Math.floor(Math.random()*13);
+            if(yomiagen==13)//から札よむかも
+            {
+                yomiagen = Math.floor(Math.random()*47);
+                document.getElementById('yomiage').textContent=ary[yomiagen];
+            }
+            else//読み札の中からランダム
+            {
+                document.getElementById('yomiage').textContent=ary[cardsn[yomiagen]];
+            }
         }
-        else//読み札の中からランダム
-        {
-            document.getElementById('yomiage').textContent=ary[cardsn[yomiagen]];
-        }
-
     }
             //document.getElementById('cards1').addEventListener('click',doyomiage)
         
@@ -180,7 +180,7 @@ do//残り絵札が0枚になるまでループ
 
 
 //ここからしばらく正誤判定////////////////////////////////////////////////////////////////////////////////////////////////
-    //var yamanoi =Boolean(' ');
+    
     const cardcheck1 = () =>
     {
         if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
@@ -228,7 +228,7 @@ do//残り絵札が0枚になるまでループ
         else//おてつき
         {
             incorrect();
-        }document.getElementById('seitou').textContent='おてつき';
+        }
         
         
 
@@ -326,11 +326,10 @@ do//残り絵札が0枚になるまでループ
     }
 
     const correct = () =>{
-
-        //document.getElementById('seitou').textContent='正解';
         playerscore+=1;
         document.getElementById('scorep').textContent=playerscore;
         restcards-=1;
+        document.getElementById('seitou').textContent=restcards;
         doyomiage();
     }
     const incorrect = () =>{
@@ -338,6 +337,7 @@ do//残り絵札が0枚になるまでループ
         cpuscore+=1;
         document.getElementById('scorec').textContent=cpuscore;
         restcards-=1;
+        document.getElementById('seitou').textContent=restcards;
         doyomiage();
     }
     
@@ -355,8 +355,8 @@ do//残り絵札が0枚になるまでループ
     document.getElementById('cards10').addEventListener('click',cardcheck10)
     document.getElementById('cards11').addEventListener('click',cardcheck11)
 //正誤判定終わり////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}while(restcards<=1);
+document.getElementById('seitou').textContent=restcards+"fff";
+}
 
 
 /*const docard = () =>             //ランダムにカードのあれ //animation-play-state:pausedここいらないかも
