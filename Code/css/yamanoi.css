@@ -4,7 +4,7 @@ body{
     background-size:100%;
 }
 h1{
-font-size: 40px;
+font-size: 25px;
 color:honeydew;
 -webkit-text-stroke: 1px #148f37;
 font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
@@ -12,16 +12,16 @@ font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
 }
 
 h2{
-    font-size: 60px;
-    margin: 10px auto auto auto;
+    font-size: 20px;
+    margin:  1px;
 
 }
 button{
-    font-size: 90%;
+    font-size: 10px;
     color:#4a9760;
     border: 5px solid #62a776;
     background-color: #f8f6e4;
-    width:5%;
-    padding: 5px;
+    width:60px;
+
     text-align: center;
 }
