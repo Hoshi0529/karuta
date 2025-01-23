@@ -149,16 +149,15 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 
 //😆😆😆😆😆😆😆😆😆😆😆読み札のとこここだよ😆😆😆😆😆😆😆😆😆😆😆😆😆😆
 let restcards=11;//残り枚数
-//残り絵札が0枚になるまでループ
-while(restcards>0){
-   
+//game start! 아파트, 아파트 아파트, 아파트 아파트, 아파트 Uh, uh-huh, uh-huh
+
     const doyomiage = () =>//読み札抽選関数
     {
         if(restcards>0)
         {
             //document.getElementById('scorep').textContent=3;プレイヤー点数
-            let yomiagen = Math.floor(Math.random()*13);
-            if(yomiagen==13)//から札よむかも
+            let yomiagen = Math.floor(Math.random()*12);
+            if(yomiagen==11)//から札よむかも
             {
                 yomiagen = Math.floor(Math.random()*47);
                 document.getElementById('yomiage').textContent=ary[yomiagen];
@@ -168,13 +167,16 @@ while(restcards>0){
                 document.getElementById('yomiage').textContent=ary[cardsn[yomiagen]];
             }
         }
+        else
+        {
+            document.getElementById('yomiage').textContent='終了！';
+        }
     }
             //document.getElementById('cards1').addEventListener('click',doyomiage)
-        
-    if(restcards==11)
-    {
-        doyomiage();
-    }
+            if(restcards==11){
+    doyomiage();
+}
+    
     
     //restcards =0;
 
@@ -356,7 +358,7 @@ while(restcards>0){
     document.getElementById('cards11').addEventListener('click',cardcheck11)
 //正誤判定終わり////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 document.getElementById('seitou').textContent=restcards+"fff";
-}
+
 
 
 /*const docard = () =>             //ランダムにカードのあれ //animation-play-state:pausedここいらないかも

@@ -1,0 +1,27 @@
+@import url(../sanitize.css);
+body{
+    background-image: url(../img/nikaidoyama.jpg);
+    background-size:100%;
+}
+h1{
+font-size: 60px;
+color:honeydew;
+-webkit-text-stroke: 1px #148f37;
+font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
+
+}
+
+h2{
+    font-size: 60px;
+    margin: 10px auto auto auto;
+
+}
+button{
+    font-size: 90%;
+    color:#4a9760;
+    border: 5px solid #62a776;
+    background-color: #f8f6e4;
+    width:5%;
+    padding: 5px;
+    text-align: center;
+}
