@@ -91,6 +91,7 @@ let cardsn=[];//選ばれた絵札入れとく配列
 let num;
 let playerscore=0;
 let cpuscore =0;
+let res='';
 for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 {
     num=Math.floor(Math.random()*47);
@@ -149,7 +150,7 @@ for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 
 //😆😆😆😆😆😆😆😆😆😆😆読み札のとこここだよ😆😆😆😆😆😆😆😆😆😆😆😆😆😆
 let restcards=11;//残り枚数
-//game start! 아파트, 아파트 아파트, 아파트 아파트, 아파트 Uh, uh-huh, uh-huh
+//game start! 아파트, 아파트 아파트, 아파트 아파트, 아파트 Uh, uh-huh, uh-huh///////////////////////////////////////////////////////////////////
 
     const doyomiage = () =>//読み札抽選関数
     {
@@ -170,12 +171,34 @@ let restcards=11;//残り枚数
         else
         {
             document.getElementById('yomiage').textContent='終了！';
+            if(playerscore>cpuscore)//勝ち
+            {
+                res='勝利';
+                const url = `./result.html?name=${encodeURIComponent(res)}`;
+                location.href = url;  
+            }
+            else if(playerscore<cpuscore)//負け
+            {
+                res='負け';
+                const url = `./result.html?name=${encodeURIComponent(res)}`;
+                location.href = url; 
+            }
+            else//引き分け
+            {
+                res='引き分け';
+                const url = `./result.html?name=${encodeURIComponent(res)}`;
+                location.href = url;  
+            }
+            
+            
         }
     }
+    
             //document.getElementById('cards1').addEventListener('click',doyomiage)
-            if(restcards==11){
-    doyomiage();
-}
+            if(restcards==11)
+            {
+                doyomiage();
+            }
     
     
     //restcards =0;
