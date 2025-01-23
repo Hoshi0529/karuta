@@ -8,23 +8,21 @@ font-size: 25px;
 color:honeydew;
 -webkit-text-stroke: 1px #148f37;
 font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
-
 }
 
 h2{
     font-size: 20px;
     margin:  1px;
-
 }
 button{
     font-size: 10px;
     color:#4a9760;
     border: 5px solid #62a776;
     background-color: #f8f6e4;
-    width:60px;
+    width:100px;
+    height: 35px;
 
-
-
-
-
+}
+content{
+    margin:40px 0px 0px 120px;
 }
