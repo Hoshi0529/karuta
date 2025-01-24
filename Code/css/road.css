@@ -16,3 +16,13 @@ h1 {
     text-align: center;
     cursor: pointer;
 }
+button{
+    margin: 220px;
+    font-size: 30px;
+    color:#4a9760;
+    border: 5px solid #62a776;
+    background-color: #f8f6e4;
+    width:200px;
+    height:80px;
+
+}
