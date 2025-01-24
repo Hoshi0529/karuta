@@ -44,6 +44,9 @@ body{
 .judgestr{
     margin-bottom: 40px;
 }
+.missstr{
+    margin-right: 10px;
+}
 .top{
     margin: 0px 0px  30px 10px;
     font-size: 20px;
