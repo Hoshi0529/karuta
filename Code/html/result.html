@@ -17,7 +17,7 @@
         </div>
         <div class="number">
             <div class="judgestr" id="judge"><p></p></div>
-            <div class="missstr" id="miss"><p>1回</p></div>
+            <div class="missstr" id="miss"><p>ssss</p></div>
         </div>
     </div>
         <button onclick="location.href='./mode.html'" name="top" class="top">Topへ</button>
@@ -26,7 +26,10 @@
         // URLからクエリパラメータを取得
         const urlParams = new URLSearchParams(window.location.search);
         const nameValue = urlParams.get('name');  // 'name'というパラメータの値を取得
-        // 取得した値を表示
-        document.getElementById('judge').textContent = nameValue;  // 取得した値を表示
+    
+        let number=nameValue.split(':');
+       
+        document.getElementById('judge').textContent = number[0];  // 取得した値を表示
+        document.getElementById('miss').textContent = number[1];
     </script>
 </html>
