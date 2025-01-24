@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/cff4f2e6-b340-4a77-84bc-8c6d7a4972f0/resourceGroups/karuta/providers/Microsoft.Web/sites/karura20250120",
+    "appService.deploySubpath": "."
+}
