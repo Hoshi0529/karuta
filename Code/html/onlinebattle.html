@@ -6,346 +6,411 @@
     <title>バトル画面</title>
 
 
-    <link rel="stylesheet" href="../css/onlinebattle.css">
+    <link rel="stylesheet" href="../css/battle.css" type="text/css">
 
 
 </head>
 <body>
     
-    <div class="battle-container">
-        <h1 id="nameDisplay"></h1><!-- ここに名前を表示 -->
+<div class="battle-container">
+    <h1 id="nameDisplay"></h1><!-- ここに名前を表示 -->
+
     
-        
-        <div class="yomiagesan" ><!--読み上げのところ-->
-            <p class="yomiagenagare"id="yomiage">井の中の蛙大海を知らず</p>
-        </div>
-    
-        
-            
-        <div class="seitousan" id="seitou"><p><p></div><!--正答-->
-    
-            
-        <div class="cardsup"><!--絵札1~6枚目-->
-            <button class="ca1" id="cards1"></button>
-            <button class="ca2"id="cards2"></button>
-            <button class="ca3"id="cards3"></button>
-            <button class="ca4"id="cards4"></button>
-            <button class="ca5"id="cards5"></button>
-            <button class="ca6"id="cards6"></button>
-        </div>
-    
-        <div class="carddo"><!--絵札7~11枚目-->
-            <button class="ca7"id="cards7"></button>
-            <button class="ca8"id="cards8"></button>
-            <button class="ca9"id="cards9"></button>
-            <button class="ca10"id="cards10"></button>
-            <button class="ca11"id="cards11"></button>
-        </div>
-        </div>
-    <script>
-    
-    
-    
-    
-    // URLからクエリパラメータを取得
-    const urlParams = new URLSearchParams(window.location.search);
-            const nameValue = urlParams.get('name');  // 'name'というパラメータの値を取得
-    
-            // 取得した値を表示
-            document.getElementById('nameDisplay').textContent = nameValue;  // 取得した値を表示
-    
-    
-        /* <div class="cardsup"><!--絵札1~6枚目
-            <button class="ca1" id="cards1"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca2"id="cards2"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca3"id="cards3"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca4"id="cards4"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca5"id="cards5"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca6"id="cards6"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-        </div>
-    
-        <div class="carddo"><!--絵札7~11枚目
-            <button class="ca7"id="cards7"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca8"id="cards8"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca9"id="cards9"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca10"id="cards10"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-            <button class="ca11"id="cards11"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
-        </div>*/
-    
-    
-    
-    
-    
-    
-    const ary = ['犬も歩けば棒に当たる',
-    '論より証拠','花より団子','憎まれ子世にはばかる','骨折り損のくたびれ儲け','下手の長談義','灯台下暗し','塵積もって山となる','良薬は口に苦し','沼地にも蓮の華','瑠璃も針も照せば光る','老いては子に従う','笑う門には福来たる','可愛い子には旅をさせ','葦のずいから天のぞく','	旅は道連れ世は情け','礼儀も過ぎれば失礼になる','損をして得をとれ','綴れを着ても心は錦','念には念を入れよ','泣き面に蜂が刺す','楽あれば苦あり','無理が通れば道理引っ込む','嘘から出た実','井の中の蛙大海を知らず','喉元過ぎれば熱さ忘るる','鬼に金棒','臭い物に蓋','安物買いの銭失い','負けるは勝ち','芸は身を助くる','河豚は食いたし命は惜しい','転ばぬ先の杖','得手に帆を揚げる','出る杭は打たる','頭隠して尻隠さず','猿も木から落ちる','聞くは当座の恥','油断大敵','目の上の瘤','	身から出た錆','知らぬが仏','縁の下の力持','貧乏暇なし','門前の小僧習わぬ経を読む','背に腹はかえられぬ','好きこそ物の上手なれ'];
-    
-    
-    let cards=[];
-    let cardsn=[];//選ばれた絵札入れとく配列
-    let num;//aaa
-    for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
-    {
-        num=Math.floor(Math.random()*47);
-        for(let j=0;j<=i;j++)
-        {
-            if(num===cardsn[j])//同じやつがあったらリセット
-            {
-                num=Math.floor(Math.random()*47);
-                j=0;
-            }
-        }
-        //cards[i]=ary[num];
-        cardsn[i]=num;
-        switch(i)
-        {
-            case 0:
-            document.getElementById('cards1').textContent=ary[num];
-            break;
-    
-            case 1:
-            document.getElementById('cards2').textContent=ary[num];
-            break;
-    
-            case 2:
-            document.getElementById('cards3').textContent=ary[num];
-            break;
-            case 3:
-            document.getElementById('cards4').textContent=ary[num];
-            break;
-            case 4:
-            document.getElementById('cards5').textContent=ary[num];
-            break;
-            case 5:
-            document.getElementById('cards6').textContent=ary[num];
-            break;
-            case 6:
-            document.getElementById('cards7').textContent=ary[num];
-            break;
-            case 7:
-            document.getElementById('cards8').textContent=ary[num];
-            break;
-            case 8:
-            document.getElementById('cards9').textContent=ary[num];
-            break;
-            case 9:
-            document.getElementById('cards10').textContent=ary[num];
-            break;
-            case 10:
-            document.getElementById('cards11').textContent=ary[num];
-            break;
-            
-            
-        }
-        //document.getElementById('cards').textContent=ary[yomiagen];
-    }
-    
-    //😆😆😆😆😆😆😆😆😆😆😆読み札のとこここだよ😆😆😆😆😆😆😆😆😆😆😆😆😆😆
-    let restcards=11;
-    //while(restcards>=1)//残り絵札が0枚になるまでループ
-    {
-        //{
-        //const doyomiage = () =>
-               // {
-                let yomiagen = Math.floor(Math.random()*47);
-                    
-                    document.getElementById('yomiage').textContent=ary[yomiagen];
-                //}   
-                //document.getElementById('cards1').addEventListener('click',doyomiage)
-    
-    
-    
-    //ここからしばらく正誤判定
-    
-        
-    
-    
-        const cardcheck1 = () =>
-        {
-            if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-    
-            
-    
-        }
-        const cardcheck2 = () =>
-        {
-            if(document.getElementById('cards2').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck3 = () =>
-        {
-            if(document.getElementById('cards3').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck4 = () =>
-        {
-            if(document.getElementById('cards4').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck5 = () =>
-        {
-            if(document.getElementById('cards5').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck6 = () =>
-        {
-            if(document.getElementById('cards6').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck7 = () =>
-        {
-            if(document.getElementById('cards7').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck8 = () =>
-        {
-            if(document.getElementById('cards8').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck9 = () =>
-        {
-            if(document.getElementById('cards9').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck10 = () =>
-        {
-            if(document.getElementById('cards10').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        const cardcheck11 = () =>
-        {
-            if(document.getElementById('cards11').textContent===document.getElementById('yomiage').textContent)//正解
-            {
-                document.getElementById('seitou').textContent='正解';
-            }
-            else//おてつき
-            {
-                document.getElementById('seitou').textContent='おてつき';
-            }
-            
-    
-        }
-        document.getElementById('cards1').addEventListener('click',cardcheck1)
-        document.getElementById('cards2').addEventListener('click',cardcheck2)
-        document.getElementById('cards3').addEventListener('click',cardcheck3)
-        document.getElementById('cards4').addEventListener('click',cardcheck4)
-        document.getElementById('cards5').addEventListener('click',cardcheck5)
-        document.getElementById('cards6').addEventListener('click',cardcheck6)
-        document.getElementById('cards7').addEventListener('click',cardcheck7)
-        document.getElementById('cards8').addEventListener('click',cardcheck8)
-        document.getElementById('cards9').addEventListener('click',cardcheck9)
-        document.getElementById('cards10').addEventListener('click',cardcheck10)
-        document.getElementById('cards11').addEventListener('click',cardcheck11)
-    //正誤判定終わり
-    }
-    
-          
-    //}
-    
-    
-    /*const docard = () =>             //ランダムにカードのあれ //animation-play-state:pausedここいらないかも
-                { 
-                    let card = Math.floor(Math.random()*3)+1;
-    
-    
-                    if(card===1)
-                    {
-                        document.getElementById('cards1').textContent='犬も歩けば棒に当たる';
-                    }
-                    else if(card===2)
-                    {
-                        document.getElementById('cards1').textContent='猿も木から落ちる';
-                    }
-                    else if(card===3)
-                    {
-                        document.getElementById('cards1').textContent='岡山に真珠';
-                    }
-                }*/
-    
-    
-    </script>
-    
-    
+    <div class="yomiagesan" ><!--読み上げのところ-->
+        <p class="yomiagenagare"id="yomiage">sample</p>
     </div>
+
     
-    </body>
-    </html>
+        
+    <div class="seitousan" id="seitou"><p><p></div><!--正答-->
+
+<div class="score">
+    <div class="scoresanp" id="scorep">*</div><!--プレイヤー点数-->
+    <div class="scoresanc" id="scorec" >*</div><!--CPU点数-->
+</div>
+    
+
+    <div class="cardsup"><!--絵札1~6枚目-->
+        <button class="ca1" id="cards1"></button>
+        <button class="ca2"id="cards2"></button>
+        <button class="ca3"id="cards3"></button>
+        <button class="ca4"id="cards4"></button>
+        <button class="ca5"id="cards5"></button>
+        <button class="ca6"id="cards6"></button>
+    </div>
+
+    <div class="carddo"><!--絵札7~11枚目-->
+        <button class="ca7"id="cards7"></button>
+        <button class="ca8"id="cards8"></button>
+        <button class="ca9"id="cards9"></button>
+        <button class="ca10"id="cards10"></button>
+        <button class="ca11"id="cards11"></button>
+    </div>
+    </div>
+<script>
+
+
+
+
+// URLからクエリパラメータを取得
+const urlParams = new URLSearchParams(window.location.search);
+        const nameValue = urlParams.get('name');  // 'name'というパラメータの値を取得
+
+        // 取得した値を表示
+        document.getElementById('nameDisplay').textContent = nameValue;  // 取得した値を表示
+
+
+    /* <div class="cardsup"><!--絵札1~6枚目
+        <button class="ca1" id="cards1"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca2"id="cards2"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca3"id="cards3"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca4"id="cards4"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca5"id="cards5"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca6"id="cards6"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+    </div>
+
+    <div class="carddo"><!--絵札7~11枚目
+        <button class="ca7"id="cards7"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca8"id="cards8"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca9"id="cards9"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca10"id="cards10"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+        <button class="ca11"id="cards11"><img src="/133_4973107160556_PT01.jpg" height ="150px" width="100px" /></button>
+    </div>*/
+
+
+
+
+
+
+const ary = ['犬も歩けば棒に当たる',
+'論より証拠','花より団子','憎まれ子世にはばかる','骨折り損のくたびれ儲け','下手の長談義','灯台下暗し','塵積もって山となる','良薬は口に苦し','沼地にも蓮の華','瑠璃も針も照せば光る','老いては子に従う','笑う門には福来たる','可愛い子には旅をさせ','葦のずいから天のぞく','	旅は道連れ世は情け','礼儀も過ぎれば失礼になる','損をして得をとれ','綴れを着ても心は錦','念には念を入れよ','泣き面に蜂が刺す','楽あれば苦あり','無理が通れば道理引っ込む','嘘から出た実','井の中の蛙大海を知らず','喉元過ぎれば熱さ忘るる','鬼に金棒','臭い物に蓋','安物買いの銭失い','負けるは勝ち','芸は身を助くる','河豚は食いたし命は惜しい','転ばぬ先の杖','得手に帆を揚げる','出る杭は打たる','頭隠して尻隠さず','猿も木から落ちる','聞くは当座の恥','油断大敵','目の上の瘤','	身から出た錆','知らぬが仏','縁の下の力持','貧乏暇なし','門前の小僧習わぬ経を読む','背に腹はかえられぬ','好きこそ物の上手なれ'];
+
+
+let cards=[];//使ってない
+let cardsn=[];//選ばれた絵札入れとく配列
+let num;
+let playerscore=0;
+let cpuscore =0;
+let res='';
+let miss;
+for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
+{
+    num=Math.floor(Math.random()*47);
+    for(let j=0;j<=i;j++)
+    {
+        if(num===cardsn[j])//同じやつがあったらリセット
+        {
+            num=Math.floor(Math.random()*47);
+            j=0;
+        }
+    }
+    //cards[i]=ary[num];
+    cardsn[i]=num;
+    switch(i)//絵札並べる
+    {
+        case 0:
+        document.getElementById('cards1').textContent=ary[num];
+        break;
+ 
+        case 1:
+        document.getElementById('cards2').textContent=ary[num];
+        break;
+ 
+        case 2:
+        document.getElementById('cards3').textContent=ary[num];
+        break;
+        case 3:
+        document.getElementById('cards4').textContent=ary[num];
+        break;
+        case 4:
+        document.getElementById('cards5').textContent=ary[num];
+        break;
+        case 5:
+        document.getElementById('cards6').textContent=ary[num];
+        break;
+        case 6:
+        document.getElementById('cards7').textContent=ary[num];
+        break;
+        case 7:
+        document.getElementById('cards8').textContent=ary[num];
+        break;
+        case 8:
+        document.getElementById('cards9').textContent=ary[num];
+        break;
+        case 9:
+        document.getElementById('cards10').textContent=ary[num];
+        break;
+        case 10:
+        document.getElementById('cards11').textContent=ary[num];
+        break;
+       
+       
+    }
+    //document.getElementById('cards').textContent=ary[yomiagen];
+}
+ 
+//😆😆😆😆😆😆😆😆😆😆😆読み札のとこここだよ😆😆😆😆😆😆😆😆😆😆😆😆😆😆
+let restcards=11;//残り枚数
+//game start! 아파트, 아파트 아파트, 아파트 아파트, 아파트 Uh, uh-huh, uh-huh///////////////////////////////////////////////////////////////////
+ 
+    const doyomiage = () =>//読み札抽選関数
+    {
+        if(restcards>0)
+        {
+            //document.getElementById('scorep').textContent=3;プレイヤー点数
+            let yomiagen = Math.floor(Math.random()*12);
+            if(yomiagen==11)//から札よむかも
+            {
+                yomiagen = Math.floor(Math.random()*47);
+                document.getElementById('yomiage').textContent=ary[yomiagen];
+            }
+            else//読み札の中からランダム
+            {
+                document.getElementById('yomiage').textContent=ary[cardsn[yomiagen]];
+            }
+        }
+        else
+        {
+            document.getElementById('yomiage').textContent='終了！';
+            if(playerscore>cpuscore)//勝ち
+            {
+                res='勝利';
+                miss=2;
+                const url = `./result.html?name=${encodeURIComponent(res+':'+miss)}`;
+                location.href = url;  
+            }
+            else if(playerscore<cpuscore)//負け
+            {
+                res='負け';
+                miss=2;
+                const url = `./result.html?name=${encodeURIComponent(res+':'+miss)}`;
+                location.href = url;
+            }
+            else//引き分け
+            {
+                res='引き分け';
+                miss=2;
+                const url = `./result.html?name=${encodeURIComponent(res+':'+miss)}`;
+                location.href = url;  
+            }
+           
+           
+        }
+    }
+    
+            //document.getElementById('cards1').addEventListener('click',doyomiage)
+            if(restcards==11)
+            {
+                doyomiage();
+            }
+    
+    
+    //restcards =0;
+
+
+//ここからしばらく正誤判定////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    const cardcheck1 = () =>
+    {
+        if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+
+    }
+    const cardcheck2 = () =>
+    {
+        if(document.getElementById('cards2').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck3 = () =>
+    {
+        if(document.getElementById('cards3').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck4 = () =>
+    {
+        if(document.getElementById('cards4').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+        
+
+    }
+    const cardcheck5 = () =>
+    {
+        if(document.getElementById('cards5').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck6 = () =>
+    {
+        if(document.getElementById('cards6').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck7 = () =>
+    {
+        if(document.getElementById('cards7').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck8 = () =>
+    {
+        if(document.getElementById('cards8').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck9 = () =>
+    {
+        if(document.getElementById('cards9').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck10 = () =>
+    {
+        if(document.getElementById('cards10').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+    const cardcheck11 = () =>
+    {
+        if(document.getElementById('cards11').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correct();
+        }
+        else//おてつき
+        {
+            incorrect();
+        }
+        
+
+    }
+
+    const correct = () =>{
+        playerscore+=1;
+        document.getElementById('scorep').textContent=playerscore;
+        restcards-=1;
+        document.getElementById('seitou').textContent=restcards;
+        doyomiage();
+    }
+    const incorrect = () =>{
+
+        cpuscore+=1;
+        document.getElementById('scorec').textContent=cpuscore;
+        restcards-=1;
+        document.getElementById('seitou').textContent=restcards;
+        doyomiage();
+    }
+    
+
+
+    document.getElementById('cards1').addEventListener('click',cardcheck1)
+    document.getElementById('cards2').addEventListener('click',cardcheck2)
+    document.getElementById('cards3').addEventListener('click',cardcheck3)
+    document.getElementById('cards4').addEventListener('click',cardcheck4)
+    document.getElementById('cards5').addEventListener('click',cardcheck5)
+    document.getElementById('cards6').addEventListener('click',cardcheck6)
+    document.getElementById('cards7').addEventListener('click',cardcheck7)
+    document.getElementById('cards8').addEventListener('click',cardcheck8)
+    document.getElementById('cards9').addEventListener('click',cardcheck9)
+    document.getElementById('cards10').addEventListener('click',cardcheck10)
+    document.getElementById('cards11').addEventListener('click',cardcheck11)
+//正誤判定終わり////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.getElementById('seitou').textContent=restcards+"fff";
+
+
+
+/*const docard = () =>             //ランダムにカードのあれ //animation-play-state:pausedここいらないかも
+            { 
+                let card = Math.floor(Math.random()*3)+1;
+
+                if(card===1)
+                {
+                    document.getElementById('cards1').textContent='犬も歩けば棒に当たる';
+                }
+                else if(card===2)
+                {
+                    document.getElementById('cards1').textContent='猿も木から落ちる';
+                }
+                else if(card===3)
+                {
+                    document.getElementById('cards1').textContent='岡山に真珠';
+                }
+            }*/
+
+
+</script>
+
+
+</div>
+
+</body>
+</html>
