@@ -169,6 +169,7 @@ let restcards=11;//残り枚数
 
         const cpuaction = function()
         {
+        clearTimeout(timeiD);
             for(let i=0;i<11;i++)
             {
                 if(document.getElementById('yomiage').textContent==ary[cardsn[i]])//正解の札を捜索
@@ -483,26 +484,22 @@ let restcards=11;//残り枚数
         document.getElementById('scorep').textContent=playerscore;
         //document.getElementById('seitou').textContent=restcards;//残り枚数みてるだけ
         restcards-=1;
-        clearTimeout(timeiD);
         doyomiage();
     }
     const incorrect = () =>{
         miss+=1;
         restcards-=1;
         //document.getElementById('seitou').textContent=restcards;
-        clearTimeout(timeiD);
         doyomiage();
     }
     const correctc = () =>{
         cpuscore+=1;
         document.getElementById('scorec').textContent=cpuscore;
         restcards-=1;
-        clearTimeout(timeiD);
         doyomiage();
     }
     const incorrectc = () =>{
         restcards-=1;
-        clearTimeout(timeiD);
         doyomiage();
     }
     document.getElementById('cards1').addEventListener('click',cardcheck1)
