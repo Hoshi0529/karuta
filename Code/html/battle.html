@@ -83,6 +83,7 @@ let cpuscore =0;//CPUの点数
 let res='';//勝敗
 let miss=0;//お手付きの回数
 var cpuact =Boolean('');
+var cnt=0;
 for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 {
     num=Math.floor(Math.random()*47);
@@ -155,8 +156,42 @@ let restcards=11;//残り枚数
             }
 /////////////////////////////////////////////////////CPUの処理//////////////////////////////////////////////////////////////////////////////
 
-        const timeiD =setTimeout(cpuaction,5000)//10秒後にCPUが動き始めるよ
+        const cpuaction = function()
+        {
+            for(let i=0;i<11;i++)
+            {
+                if(document.getElementById('yomiage').textContent==ary[cardsn[i]])//正解の札を捜索
+                {
+                    var ote=Math.floor(Math.random()*5);//0~4
+                    if(ote==4)//お手付きさせる
+                    {
+                        if(i>=5){i=i-3;}
+                        else    {i=i+3;}
+                    }
+                    cpuact='t';//これはCPUのアクションですよ
+                        switch(i)
+                        {
+                            case 0:cardcheck1c();break;
+                            case 1:cardcheck2c();break;
+                            case 2:cardcheck3c();break;
+                            case 3:cardcheck4c();break;
+                            case 4:cardcheck5c();break;
+                            case 5:cardcheck6c();break;
+                            case 6:cardcheck7c();break;
+                            case 7:cardcheck8c();break;
+                            case 8:cardcheck9c();break;
+                            case 9:cardcheck10c();break;
+                            case 10:cardcheck11c();break;
+                        }
+                        break;
+                }
+                else if(i==11){
 
+                }
+            }
+        }
+        const timeiD =setTimeout(cpuaction,5000)//5秒後にCPUが動き始めるよ
+        cnt+=1;document.getElementById('seitou').textContent='通ってるよ:'+cnt+'回';//バグの箇所特定するやつ
         }
         else//取りきったので勝敗判定
         {
@@ -186,40 +221,7 @@ let restcards=11;//残り枚数
                 doyomiage();
             }
 
-        var cpuaction = function()
-        {
-            for(let i=0;i<11;i++)
-            {
-                if(document.getElementById('yomiage').textContent==ary[cardsn[i]])//正解の札を捜索
-                {
-                    var ote=Math.floor(Math.random()*5);//0~4
-                    if(ote==4)//お手付きさせる
-                    {
-                        if(i>=5){i=i-3;}
-                        else    {i=i+3;}
-                    }
-                    cpuact='t';//これはCPUのアクションですよ
-                        switch(i)
-                        {
-                            case 0:cardcheck1();break;
-                            case 1:cardcheck2();break;
-                            case 2:cardcheck3();break;
-                            case 3:cardcheck4();break;
-                            case 4:cardcheck5();break;
-                            case 5:cardcheck6();break;
-                            case 6:cardcheck7();break;
-                            case 7:cardcheck8();break;
-                            case 8:cardcheck9();break;
-                            case 9:cardcheck10();break;
-                            case 10:cardcheck11();break;
-                        }
-                        break;
-                }
-                else if(i==11){
-
-                }
-            }
-        }
+        
 ////////////////////////////////////////////////////////ここからしばらく正誤判定//////////////////////////////////////////////
     const cardcheck1 = () =>
     {
@@ -343,34 +345,152 @@ let restcards=11;//残り枚数
         }
     }
 
-    const correct = () =>{
-        
-        if(cpuact)//CPUだ！
+    const cardcheck1c = () =>
+    {
+        if(document.getElementById('cards1').textContent===document.getElementById('yomiage').textContent)//正解
         {
-            cpuscore+=1;
-            document.getElementById('scorec').textContent=cpuscore;
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck2c = () =>
+    {
+        if(document.getElementById('cards2').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck3c = () =>
+    {
+        if(document.getElementById('cards3').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck4c = () =>
+    {
+        if(document.getElementById('cards4').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck5c = () =>
+    {
+        if(document.getElementById('cards5').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck6c = () =>
+    {
+        if(document.getElementById('cards6').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck7c = () =>
+    {
+        if(document.getElementById('cards7').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck8c = () =>
+    {
+        if(document.getElementById('cards8').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck9c = () =>
+    {
+        if(document.getElementById('cards9').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck10c = () =>
+    {
+        if(document.getElementById('cards10').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
+    const cardcheck11c = () =>
+    {
+        if(document.getElementById('cards11').textContent===document.getElementById('yomiage').textContent)//正解
+        {
+            correctc();
+        }
+        else//おてつき
+        {
+            incorrectc();
+        }
+    }
 
-        }
-        else//CPUのアクションじゃないよ
-        {
-            playerscore+=1;
-            document.getElementById('scorep').textContent=playerscore;
-            //document.getElementById('seitou').textContent=restcards;//残り枚数みてるだけ
-        }
+    const correct = () =>{
+        playerscore+=1;
+        document.getElementById('scorep').textContent=playerscore;
+        //document.getElementById('seitou').textContent=restcards;//残り枚数みてるだけ
         restcards-=1;
         clearTimeout(timeiD);
         doyomiage();
     }
     const incorrect = () =>{
-        
-        if(cpuact){//cpuだ！
-            
-        }
-        else{
-            miss+=1;
-        }
+        miss+=1;
         restcards-=1;
         //document.getElementById('seitou').textContent=restcards;
+        clearTimeout(timeiD);
+        doyomiage();
+    }
+    const correctc = () =>{
+        cpuscore+=1;
+        document.getElementById('scorec').textContent=cpuscore;
+        restcards-=1;
+        clearTimeout(timeiD);
+        doyomiage();
+    }
+    const incorrectc = () =>{
+        restcards-=1;
         clearTimeout(timeiD);
         doyomiage();
     }
@@ -386,7 +506,7 @@ let restcards=11;//残り枚数
     document.getElementById('cards10').addEventListener('click',cardcheck10)
     document.getElementById('cards11').addEventListener('click',cardcheck11)
 ////////////////////////////////////////////////////////正誤判定終わり////////////////////////////////////////////
-document.getElementById('seitou').textContent=restcards+"fff";
+//document.getElementById('seitou').textContent=restcards+"fff";
 
 </script>
 </div>
