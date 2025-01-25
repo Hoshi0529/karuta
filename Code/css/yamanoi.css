@@ -11,10 +11,12 @@ color:honeydew;
 font-family:  "ヒラギノ角ゴ ProN W3", sans-serif;
 }
 
-h2{
+.tatle{
     font-size: 20px;
-    margin-left:  40px;
+    margin-left:  50px;
 }
+
+
 button{
     margin-left: 90px;
     font-size: 10px;
@@ -25,6 +27,15 @@ button{
     height: 35px;
 
 }
-content{
-    margin:40px 0px 0px 120px;
+.content{
+    margin-top: 25px;
 }
+.yamanoi{
+    display: flex;
+    font-size: 20px;
+    margin-left:  70px;
+}
+.level{
+    margin-right: 30px;
+}
+
