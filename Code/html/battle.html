@@ -141,25 +141,15 @@ let restcards=11;//残り枚数
     {
         if(restcards>0)//残り札があるので継続
         {
-            /*yomiagen = Math.floor(Math.random()*11);
+            yomiagen = Math.floor(Math.random()*11);
             for(let i=0;i<yomiager.length;i++)
             {
                 if(yomiagen==yomiager[i])
                 {
                     continue;
                 }
-            }*/bo=0;
-            while(bo==0){
-                yomiagen = Math.floor(Math.random()*11);
-                if(yomiagen==yomiager[i])
-                {
-                    bo=0;
-                }
-                else
-                {
-                    bo=1;
-                }
             }
+            
             yomiager[cnt]=yomiagen;
             cnt+=1;
             /*if(yomiagen==11)//から札よむかも
