@@ -71,6 +71,7 @@ var cpuact =Boolean('');
 var cnt=0;
 var yomiagen=0;
 const yomiager=[];
+var bo=0;
 for(let i =0;i<11;i++)//絵札を重複なしで11枚選ぶ
 {
     num=Math.floor(Math.random()*45);
@@ -140,10 +141,23 @@ let restcards=11;//残り枚数
     {
         if(restcards>0)//残り札があるので継続
         {
-            yomiagen = Math.floor(Math.random()*11);
-            for(let i=0;i<yomiager.length;i++){
-                if(yomiagen==yomiager[i]){
+            /*yomiagen = Math.floor(Math.random()*11);
+            for(let i=0;i<yomiager.length;i++)
+            {
+                if(yomiagen==yomiager[i])
+                {
                     continue;
+                }
+            }*/bo=0;
+            while(bo==0){
+                yomiagen = Math.floor(Math.random()*11);
+                if(yomiagen==yomiager[i])
+                {
+                    bo=0;
+                }
+                else
+                {
+                    bo=1;
                 }
             }
             yomiager[cnt]=yomiagen;
@@ -159,40 +173,51 @@ let restcards=11;//残り枚数
             //}
 /////////////////////////////////////////////////////CPUの処理//////////////////////////////////////////////////////////////////////////////
 
-        const cpuaction = function()
-        {
-            clearTimeout(timeiD);
-            for(let i=0;i<11;i++)
-            {
-                if(document.getElementById('yomiage').textContent==ary[cardsn[i]])//正解の札を捜索
-                {
-                    var ote=Math.floor(Math.random()*5);//0~4
-                    /*if(ote==4)//お手付きさせる
-                    {
-                        if(i>=5){i=i-3;}
-                        else    {i=i+3;}
-                    }*/
-                    cpuact='t';//これはCPUのアクションですよ
-                        switch(i)
-                        {
-                            case 0:cardcheck1c();break;
-                            case 1:cardcheck2c();break;
-                            case 2:cardcheck3c();break;
-                            case 3:cardcheck4c();break;
-                            case 4:cardcheck5c();break;
-                            case 5:cardcheck6c();break;
-                            case 6:cardcheck7c();break;
-                            case 7:cardcheck8c();break;
-                            case 8:cardcheck9c();break;
-                            case 9:cardcheck10c();break;
-                            case 10:cardcheck11c();break;
-                        }
-                        break;
-                }
-                
+const cpuaction = function () {
+    // すでに誰かが取った場合はCPUは動かない
+    if (document.getElementById(`cards${yomiagen + 1}s`).src.includes("/img/裏.PNG")) {
+        return; 
+    }
+
+    clearTimeout(timeiD); // 前回のsetTimeoutをクリア
+
+    for (let i = 0; i < 11; i++) {
+        if (document.getElementById('yomiage').textContent === ary[cardsn[i]]) {
+            // CPUが選択する札を探す
+            let targetIndex = i;
+
+            // CPUがお手つきをする可能性
+            let ote = Math.random();
+            if (ote < 0.2) { // 20%の確率で誤った札を選ぶ
+                let wrongIndex;
+                do {
+                    wrongIndex = Math.floor(Math.random() * 11);
+                } while (wrongIndex === targetIndex); // 正解の札とは違う札を選ぶ
+
+                targetIndex = wrongIndex;
             }
+
+            cpuact = true; // CPUがアクションを行うフラグ
+            switch (targetIndex) {
+                case 0: cardcheck1c(); break;
+                case 1: cardcheck2c(); break;
+                case 2: cardcheck3c(); break;
+                case 3: cardcheck4c(); break;
+                case 4: cardcheck5c(); break;
+                case 5: cardcheck6c(); break;
+                case 6: cardcheck7c(); break;
+                case 7: cardcheck8c(); break;
+                case 8: cardcheck9c(); break;
+                case 9: cardcheck10c(); break;
+                case 10: cardcheck11c(); break;
+            }
+            break;
         }
-        var timeiD =setTimeout(cpuaction,5000)//5秒後にCPUが動き始めるよ
+    }
+};
+
+// CPUの行動を一定時間後に開始
+var timeiD = setTimeout(cpuaction, 5000);
         }
         else//取りきったので勝敗判定
         {
